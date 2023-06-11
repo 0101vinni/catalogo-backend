@@ -1,4 +1,4 @@
-package com.freemarcket.catalogo.resources.exceptions;
+package com.freemarcket.catalogo.resources;
 
 import com.freemarcket.catalogo.DTO.StorageDTO;
 import com.freemarcket.catalogo.services.StorageService;
@@ -22,7 +22,7 @@ public class StorageResource {
     public ResponseEntity<Page<StorageDTO>> findAll(
             @RequestParam(value = "page", defaultValue = "0") Integer page,
             @RequestParam(value = "linesPage", defaultValue = "12") Integer linesPage,
-            @RequestParam(value = "orderBy", defaultValue = "name") String orderBy,
+            @RequestParam(value = "orderBy", defaultValue = "endereco") String orderBy,
             @RequestParam(value = "direction", defaultValue = "ASC") String direction
     ) {
         PageRequest pageRequest = PageRequest.of(page, linesPage, Sort.Direction.valueOf(direction),orderBy );
