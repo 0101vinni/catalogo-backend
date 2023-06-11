@@ -30,4 +30,6 @@ public class Storage {
     )
     @Getter Set<Storage> storages = new HashSet<>();
 
+    public Storage(Storage entity) {
+    }
 }

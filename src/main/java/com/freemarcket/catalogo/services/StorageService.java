@@ -36,7 +36,7 @@ public class StorageService {
     }
 
     @Transactional
-    public StorageDTO insert(StorageDTO storageDTO) {
+    public Storage insert(StorageDTO storageDTO) {
         Storage entity = new Storage();
         entity.setEndereco(storageDTO.getEndereco());
         entity = repository.save(entity);
