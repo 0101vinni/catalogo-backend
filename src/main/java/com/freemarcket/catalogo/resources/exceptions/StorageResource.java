@@ -1,4 +1,4 @@
-package com.freemarcket.catalogo.resources;
+package com.freemarcket.catalogo.resources.exceptions;
 
 import com.freemarcket.catalogo.DTO.StorageDTO;
 import com.freemarcket.catalogo.services.StorageService;
@@ -48,7 +48,7 @@ public class StorageResource {
     }
     @PutMapping(value = "/{id}")
     public ResponseEntity<StorageDTO> update(@PathVariable Long id, @RequestBody StorageDTO storageDTO){
-       storageDTO = service.update(id, storageDTO);
+        storageDTO = service.update(id, storageDTO);
 
         return ResponseEntity.ok().body(storageDTO);
 
