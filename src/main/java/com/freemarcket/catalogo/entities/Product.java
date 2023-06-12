@@ -21,6 +21,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter private Long id;
     @Getter @Setter private String name;
+
     @Column(columnDefinition = "TEXT")
     @Getter @Setter private String description;
     @Getter @Setter private Double price;
@@ -29,11 +30,9 @@ public class Product {
     @Getter Set<Storage> storages = new HashSet<>();
 
     @ManyToMany
-    @JoinTable(
-            name = "tb_product_category",
+    @JoinTable(name = "tb_product_category",
             joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id")
-    )
-    @Getter Set<Category> categories = new HashSet<>();
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    @Getter @Setter Set<Category> categories = new HashSet<>();
 
 }
